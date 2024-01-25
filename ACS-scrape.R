@@ -12,7 +12,7 @@ library(curl)
 #B01001_013E	Estimate!!Total:!!Male:!!35 to 39 years
 #B01001_014E	Estimate!!Total:!!Male:!!40 to 44 years
 #B01001_035E	Estimate!!Total:!!Female:!!25 to 29 years
-#B01001_035E	Estimate!!Total:!!Female:!!25 to 29 years
+#B01001_036E	Estimate!!Total:!!Female:!!30 to 34 years
 #B01001_037E	Estimate!!Total:!!Female:!!35 to 39 years
 #B01001_038E	Estimate!!Total:!!Female:!!40 to 44 years
 
@@ -28,7 +28,7 @@ variable_labels = t(data.frame(
   c("B01001_013E","Estimate!!Total:!!Male:!!35 to 39 years"),
   c("B01001_014E","Estimate!!Total:!!Male:!!40 to 44 years"),
   c("B01001_035E","Estimate!!Total:!!Female:!!25 to 29 years"),
-  c("B01001_035E","Estimate!!Total:!!Female:!!25 to 29 years"),
+  c("B01001_036E","Estimate!!Total:!!Female:!!30 to 34 years"),
   c("B01001_037E","Estimate!!Total:!!Female:!!35 to 39 years"),
   c("B01001_038E","Estimate!!Total:!!Female:!!40 to 44 years"), row.names = TRUE
 )
@@ -46,7 +46,6 @@ new_url <- paste0(prefix,url_vars,infix,my_key)
 
 bigdata <- readLines(curl(url=new_url))
 
-##################################################################
 ##################################################################
 #Now let's export our data to csv.
 write.csv(bigdata, "populationandage.csv", row.names=TRUE)
